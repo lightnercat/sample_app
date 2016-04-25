@@ -13,5 +13,7 @@
 
 # Ignore all logfiles and tempfiles.
 /log/*
-!/log/.keep
 /tmp
+
+#Ignore Sprint Files.
+/spring/*.pid

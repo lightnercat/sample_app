@@ -4,6 +4,7 @@ class StaticPagesControllerTest < ActionController::TestCase
   test "should get home" do
     get :home
     assert_response :success
+    # 出力された<title>...</title>内の文字列と引数2を比較
     assert_select "title", "Ruby on Rails Tutorial Sample App"
   end
 

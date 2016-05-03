@@ -1,0 +1,69 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+ActiveSupport	test/test_helper.rb	/^class ActiveSupport::TestCase$/;"	c
+AddIndexToUsersEmail	db/migrate/20160428143116_add_index_to_users_email.rb	/^class AddIndexToUsersEmail < ActiveRecord::Migration$/;"	c
+AddPasswordDigestToUsers	db/migrate/20160429001149_add_password_digest_to_users.rb	/^class AddPasswordDigestToUsers < ActiveRecord::Migration$/;"	c
+AddRememberDigestToUsers	db/migrate/20160501024750_add_remember_digest_to_users.rb	/^class AddRememberDigestToUsers < ActiveRecord::Migration$/;"	c
+Application	config/application.rb	/^  class Application < Rails::Application$/;"	c	class:SampleApp
+ApplicationController	app/controllers/application_controller.rb	/^class ApplicationController < ActionController::Base$/;"	c
+ApplicationHelper	app/helpers/application_helper.rb	/^module ApplicationHelper$/;"	m
+CreateUsers	db/migrate/20160428125138_create_users.rb	/^class CreateUsers < ActiveRecord::Migration$/;"	c
+SampleApp	config/application.rb	/^module SampleApp$/;"	m
+SessionsController	app/controllers/sessions_controller.rb	/^class SessionsController < ApplicationController$/;"	c
+SessionsControllerTest	test/controllers/sessions_controller_test.rb	/^class SessionsControllerTest < ActionController::TestCase$/;"	c
+SessionsHelper	app/helpers/sessions_helper.rb	/^module SessionsHelper$/;"	m
+SessionsHelperTest	test/helpers/sessions_helper_test.rb	/^class SessionsHelperTest < ActionView::TestCase$/;"	c
+SiteLayoutTest	test/integration/site_layout_test.rb	/^class SiteLayoutTest < ActionDispatch::IntegrationTest$/;"	c
+StaticPagesController	app/controllers/static_pages_controller.rb	/^class StaticPagesController < ApplicationController$/;"	c
+StaticPagesControllerTest	test/controllers/static_pages_controller_test.rb	/^class StaticPagesControllerTest < ActionController::TestCase$/;"	c
+StaticPagesHelper	app/helpers/static_pages_helper.rb	/^module StaticPagesHelper$/;"	m
+User	app/models/user.rb	/^class User < ActiveRecord::Base$/;"	c
+UserTest	test/models/user_test.rb	/^class UserTest < ActiveSupport::TestCase$/;"	c
+UsersController	app/controllers/users_controller.rb	/^class UsersController < ApplicationController$/;"	c
+UsersControllerTest	test/controllers/users_controller_test.rb	/^class UsersControllerTest < ActionController::TestCase$/;"	c
+UsersEditTest	test/integration/users_edit_test.rb	/^class UsersEditTest < ActionDispatch::IntegrationTest$/;"	c
+UsersHelper	app/helpers/users_helper.rb	/^module UsersHelper$/;"	m
+UsersLoginTest	test/integration/users_login_test.rb	/^class UsersLoginTest < ActionDispatch::IntegrationTest$/;"	c
+UsersSignupTest	test/integration/users_signup_test.rb	/^class UsersSignupTest < ActionDispatch::IntegrationTest$/;"	c
+about	app/controllers/static_pages_controller.rb	/^  def about$/;"	f	class:StaticPagesController
+authenticated?	app/models/user.rb	/^  def authenticated?(remember_token)$/;"	f	class:User
+change	db/migrate/20160428125138_create_users.rb	/^  def change$/;"	f	class:CreateUsers
+change	db/migrate/20160428143116_add_index_to_users_email.rb	/^  def change$/;"	f	class:AddIndexToUsersEmail
+change	db/migrate/20160429001149_add_password_digest_to_users.rb	/^  def change$/;"	f	class:AddPasswordDigestToUsers
+change	db/migrate/20160501024750_add_remember_digest_to_users.rb	/^  def change$/;"	f	class:AddRememberDigestToUsers
+contact	app/controllers/static_pages_controller.rb	/^  def contact$/;"	f	class:StaticPagesController
+create	app/controllers/sessions_controller.rb	/^ def create$/;"	f	class:SessionsController
+create	app/controllers/users_controller.rb	/^  def create$/;"	f	class:UsersController
+current_user	app/helpers/sessions_helper.rb	/^ def current_user$/;"	f	class:SessionsHelper
+destroy	app/controllers/sessions_controller.rb	/^ def destroy$/;"	f	class:SessionsController
+digest	app/models/user.rb	/^  def User.digest(string)$/;"	F	class:User
+edit	app/controllers/users_controller.rb	/^  def edit$/;"	f	class:UsersController
+forget	app/helpers/sessions_helper.rb	/^ def forget(user)$/;"	f	class:SessionsHelper
+forget	app/models/user.rb	/^  def forget$/;"	f	class:User
+full_title	app/helpers/application_helper.rb	/^  def full_title(page_title='')$/;"	f	class:ApplicationHelper
+gravatar_for	app/helpers/users_helper.rb	/^ def gravatar_for(user)$/;"	f	class:UsersHelper
+help	app/controllers/static_pages_controller.rb	/^  def help$/;"	f	class:StaticPagesController
+home	app/controllers/static_pages_controller.rb	/^  def home$/;"	f	class:StaticPagesController
+integration_test?	test/test_helper.rb	/^   def integration_test?$/;"	f	class:ActiveSupport
+is_logged_in?	test/test_helper.rb	/^  def is_logged_in?$/;"	f	class:ActiveSupport
+log_in	app/helpers/sessions_helper.rb	/^ def log_in(user)$/;"	f	class:SessionsHelper
+log_in_as	test/test_helper.rb	/^  def log_in_as(user, options = {} )$/;"	f	class:ActiveSupport
+log_out	app/helpers/sessions_helper.rb	/^ def log_out$/;"	f	class:SessionsHelper
+logged_in?	app/helpers/sessions_helper.rb	/^ def logged_in?$/;"	f	class:SessionsHelper
+logged_in_user	app/controllers/users_controller.rb	/^    def logged_in_user$/;"	f	class:UsersController
+new	app/controllers/sessions_controller.rb	/^ def new$/;"	f	class:SessionsController
+new	app/controllers/users_controller.rb	/^  def new$/;"	f	class:UsersController
+new_token	app/models/user.rb	/^  def User.new_token$/;"	F	class:User
+remember	app/helpers/sessions_helper.rb	/^ def remember(user)$/;"	f	class:SessionsHelper
+remember	app/models/user.rb	/^  def remember$/;"	f	class:User
+setup	test/helpers/sessions_helper_test.rb	/^ def setup$/;"	f	class:SessionsHelperTest
+setup	test/integration/users_edit_test.rb	/^ def setup$/;"	f	class:UsersEditTest
+setup	test/integration/users_login_test.rb	/^ def setup$/;"	f	class:UsersLoginTest
+setup	test/models/user_test.rb	/^  def setup$/;"	f	class:UserTest
+show	app/controllers/users_controller.rb	/^  def show$/;"	f	class:UsersController
+update	app/controllers/users_controller.rb	/^  def update$/;"	f	class:UsersController
+user_params	app/controllers/users_controller.rb	/^    def user_params$/;"	f	class:UsersController

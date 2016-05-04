@@ -17,3 +17,6 @@
 
 #Ignore Sprint Files.
 /spring/*.pid
+
+#Ignore DS_Store
+.DS_Store

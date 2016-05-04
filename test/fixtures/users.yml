@@ -24,6 +24,14 @@ mallory:
  name: Mallory Archer
  email: boss@example.gov
  password_digest: <%= User.digest('password') %> 
+ activated: true
+ activated_at: <% Time.zone.now %>
+
+non:
+ name: Nonactivated User
+ email: non@example.gov
+ password_digest: <%= User.digest('password') %> 
+ activated: false
 
 <% 30.times do |n| %>
 user_<%= n %>:

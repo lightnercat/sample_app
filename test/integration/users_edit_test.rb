@@ -34,5 +34,9 @@ class UsersEditTest < ActionDispatch::IntegrationTest
   @user.reload # Reload user info from DB
   assert_equal name, @user.name
   assert_equal email, @user.email
+
+  assert_nil session[:forwarding_url]
+  log_in_as(@user)
+  assert_redirected_to user_url(@user)
  end
 end

@@ -23,6 +23,7 @@ lana:
 mallory:
  name: Mallory Archer
  email: boss@example.gov
+ activated: true
  password_digest: <%= User.digest('password') %> 
 
 <% 30.times do |n| %>

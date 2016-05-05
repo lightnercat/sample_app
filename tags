@@ -17,9 +17,16 @@ Application	config/application.rb	/^  class Application < Rails::Application$/;"
 ApplicationController	app/controllers/application_controller.rb	/^class ApplicationController < ActionController::Base$/;"	c
 ApplicationHelper	app/helpers/application_helper.rb	/^module ApplicationHelper$/;"	m
 ApplicationMailer	app/mailers/application_mailer.rb	/^class ApplicationMailer < ActionMailer::Base$/;"	c
+CreateMicroposts	db/migrate/20160505014639_create_microposts.rb	/^class CreateMicroposts < ActiveRecord::Migration$/;"	c
 CreateUsers	db/migrate/20160428125138_create_users.rb	/^class CreateUsers < ActiveRecord::Migration$/;"	c
+Micropost	app/models/micropost.rb	/^class Micropost < ActiveRecord::Base$/;"	c
+MicropostTest	test/models/micropost_test.rb	/^class MicropostTest < ActiveSupport::TestCase$/;"	c
+MicropostsController	app/controllers/microposts_controller.rb	/^class MicropostsController < ApplicationController$/;"	c
+MicropostsControllerTest	test/controllers/microposts_controller_test.rb	/^class MicropostsControllerTest < ActionController::TestCase$/;"	c
+MicropostsHelper	app/helpers/microposts_helper.rb	/^module MicropostsHelper$/;"	m
 PasswordResetsController	app/controllers/password_resets_controller.rb	/^class PasswordResetsController < ApplicationController$/;"	c
 PasswordResetsHelper	app/helpers/password_resets_helper.rb	/^module PasswordResetsHelper$/;"	m
+PasswordResetsTest	test/integration/password_resets_test.rb	/^class PasswordResetsTest < ActionDispatch::IntegrationTest$/;"	c
 SampleApp	config/application.rb	/^module SampleApp$/;"	m
 SessionsController	app/controllers/sessions_controller.rb	/^class SessionsController < ApplicationController$/;"	c
 SessionsControllerTest	test/controllers/sessions_controller_test.rb	/^class SessionsControllerTest < ActionController::TestCase$/;"	c
@@ -40,6 +47,7 @@ UsersEditTest	test/integration/users_edit_test.rb	/^class UsersEditTest < Action
 UsersHelper	app/helpers/users_helper.rb	/^module UsersHelper$/;"	m
 UsersIndexTest	test/integration/users_index_test.rb	/^class UsersIndexTest < ActionDispatch::IntegrationTest$/;"	c
 UsersLoginTest	test/integration/users_login_test.rb	/^class UsersLoginTest < ActionDispatch::IntegrationTest$/;"	c
+UsersProfileTest	test/integration/users_profile_test.rb	/^class UsersProfileTest < ActionDispatch::IntegrationTest$/;"	c
 UsersSignupTest	test/integration/users_signup_test.rb	/^class UsersSignupTest < ActionDispatch::IntegrationTest$/;"	c
 about	app/controllers/static_pages_controller.rb	/^  def about$/;"	f	class:StaticPagesController
 account_activation	app/mailers/user_mailer.rb	/^  def account_activation(user)$/;"	f	class:UserMailer
@@ -54,8 +62,11 @@ change	db/migrate/20160501024750_add_remember_digest_to_users.rb	/^  def change$
 change	db/migrate/20160503062211_add_admin_to_users.rb	/^  def change$/;"	f	class:AddAdminToUsers
 change	db/migrate/20160504052925_add_activation_to_users.rb	/^  def change$/;"	f	class:AddActivationToUsers
 change	db/migrate/20160504082011_add_reset_to_users.rb	/^  def change$/;"	f	class:AddResetToUsers
+change	db/migrate/20160505014639_create_microposts.rb	/^  def change$/;"	f	class:CreateMicroposts
+check_expiration	app/controllers/password_resets_controller.rb	/^    def check_expiration$/;"	f	class:PasswordResetsController
 contact	app/controllers/static_pages_controller.rb	/^  def contact$/;"	f	class:StaticPagesController
 correct_user	app/controllers/users_controller.rb	/^    def correct_user$/;"	f	class:UsersController
+create	app/controllers/microposts_controller.rb	/^ def create$/;"	f	class:MicropostsController
 create	app/controllers/password_resets_controller.rb	/^  def create$/;"	f	class:PasswordResetsController
 create	app/controllers/sessions_controller.rb	/^ def create$/;"	f	class:SessionsController
 create	app/controllers/users_controller.rb	/^  def create$/;"	f	class:UsersController
@@ -63,6 +74,7 @@ create_activation_digest	app/models/user.rb	/^    def create_activation_digest$/
 create_reset_digest	app/models/user.rb	/^  def create_reset_digest$/;"	f	class:User
 current_user	app/helpers/sessions_helper.rb	/^ def current_user$/;"	f	class:SessionsHelper
 current_user?	app/helpers/sessions_helper.rb	/^ def current_user?(user)$/;"	f	class:SessionsHelper
+destroy	app/controllers/microposts_controller.rb	/^ def destroy$/;"	f	class:MicropostsController
 destroy	app/controllers/sessions_controller.rb	/^ def destroy$/;"	f	class:SessionsController
 destroy	app/controllers/users_controller.rb	/^  def destroy$/;"	f	class:UsersController
 digest	app/models/user.rb	/^  def User.digest(string)$/;"	F	class:User
@@ -73,6 +85,7 @@ edit	app/controllers/users_controller.rb	/^  def edit$/;"	f	class:UsersControlle
 forget	app/helpers/sessions_helper.rb	/^ def forget(user)$/;"	f	class:SessionsHelper
 forget	app/models/user.rb	/^  def forget$/;"	f	class:User
 full_title	app/helpers/application_helper.rb	/^  def full_title(page_title='')$/;"	f	class:ApplicationHelper
+get_user	app/controllers/password_resets_controller.rb	/^    def get_user$/;"	f	class:PasswordResetsController
 gravatar_for	app/helpers/users_helper.rb	/^ def gravatar_for(user, options = { size: 80 })$/;"	f	class:UsersHelper
 help	app/controllers/static_pages_controller.rb	/^  def help$/;"	f	class:StaticPagesController
 home	app/controllers/static_pages_controller.rb	/^  def home$/;"	f	class:StaticPagesController
@@ -83,26 +96,35 @@ log_in	app/helpers/sessions_helper.rb	/^ def log_in(user)$/;"	f	class:SessionsHe
 log_in_as	test/test_helper.rb	/^  def log_in_as(user, options = {} )$/;"	f	class:ActiveSupport
 log_out	app/helpers/sessions_helper.rb	/^ def log_out$/;"	f	class:SessionsHelper
 logged_in?	app/helpers/sessions_helper.rb	/^ def logged_in?$/;"	f	class:SessionsHelper
-logged_in_user	app/controllers/users_controller.rb	/^    def logged_in_user$/;"	f	class:UsersController
+logged_in_user	app/controllers/application_controller.rb	/^  def logged_in_user$/;"	f	class:ApplicationController
+micropost_params	app/controllers/microposts_controller.rb	/^  def micropost_params$/;"	f	class:MicropostsController
 new	app/controllers/password_resets_controller.rb	/^  def new$/;"	f	class:PasswordResetsController
 new	app/controllers/sessions_controller.rb	/^ def new$/;"	f	class:SessionsController
 new	app/controllers/users_controller.rb	/^  def new$/;"	f	class:UsersController
 new_token	app/models/user.rb	/^  def User.new_token$/;"	F	class:User
 password_reset	app/mailers/user_mailer.rb	/^  def password_reset(user)$/;"	f	class:UserMailer
 password_reset	test/mailers/previews/user_mailer_preview.rb	/^  def password_reset$/;"	f	class:UserMailerPreview
+password_reset_expired?	app/models/user.rb	/^  def password_reset_expired?$/;"	f	class:User
 redirect_back_or	app/helpers/sessions_helper.rb	/^ def redirect_back_or(default)$/;"	f	class:SessionsHelper
 remember	app/helpers/sessions_helper.rb	/^ def remember(user)$/;"	f	class:SessionsHelper
 remember	app/models/user.rb	/^  def remember$/;"	f	class:User
 send_activation_email	app/models/user.rb	/^  def send_activation_email$/;"	f	class:User
 send_password_reset_email	app/models/user.rb	/^  def send_password_reset_email$/;"	f	class:User
+setup	test/controllers/microposts_controller_test.rb	/^ def setup$/;"	f	class:MicropostsControllerTest
 setup	test/controllers/users_controller_test.rb	/^  def setup$/;"	f	class:UsersControllerTest
 setup	test/helpers/sessions_helper_test.rb	/^ def setup$/;"	f	class:SessionsHelperTest
+setup	test/integration/password_resets_test.rb	/^ def setup$/;"	f	class:PasswordResetsTest
 setup	test/integration/users_edit_test.rb	/^ def setup$/;"	f	class:UsersEditTest
 setup	test/integration/users_index_test.rb	/^ def setup$/;"	f	class:UsersIndexTest
 setup	test/integration/users_login_test.rb	/^ def setup$/;"	f	class:UsersLoginTest
+setup	test/integration/users_profile_test.rb	/^ def setup$/;"	f	class:UsersProfileTest
 setup	test/integration/users_signup_test.rb	/^  def setup$/;"	f	class:UsersSignupTest
+setup	test/models/micropost_test.rb	/^ def setup$/;"	f	class:MicropostTest
 setup	test/models/user_test.rb	/^  def setup$/;"	f	class:UserTest
 show	app/controllers/users_controller.rb	/^  def show$/;"	f	class:UsersController
 store_location	app/helpers/sessions_helper.rb	/^ def store_location$/;"	f	class:SessionsHelper
+update	app/controllers/password_resets_controller.rb	/^  def update$/;"	f	class:PasswordResetsController
 update	app/controllers/users_controller.rb	/^  def update$/;"	f	class:UsersController
+user_params	app/controllers/password_resets_controller.rb	/^    def user_params$/;"	f	class:PasswordResetsController
 user_params	app/controllers/users_controller.rb	/^    def user_params$/;"	f	class:UsersController
+valid_user	app/controllers/password_resets_controller.rb	/^    def valid_user$/;"	f	class:PasswordResetsController

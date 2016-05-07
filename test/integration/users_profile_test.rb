@@ -32,7 +32,7 @@ class UsersProfileTest < ActionDispatch::IntegrationTest
 
  test "home display not logged in user" do
   log_in_as(@user)
-  get root_path
+  get users_pat(@user)
   assert_match @user.microposts.count.to_s, response.body
   assert_match @user.following.count.to_s, response.body
   assert_match @user.followers.count.to_s, response.body

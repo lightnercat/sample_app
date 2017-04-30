@@ -17,6 +17,8 @@ gem 'turbolinks',   '2.3.0'
 gem 'jbuilder',     '2.2.3'
 gem 'sdoc',         '0.4.0', group: :doc
 
+gem 'webpacker'
+
 group :development, :test do
   gem 'mysql2'
   gem 'byebug',      '3.4.0'

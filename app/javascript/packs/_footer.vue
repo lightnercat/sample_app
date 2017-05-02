@@ -8,9 +8,9 @@ footer.footer
   nav
     ul
       li
-        a href="#"  About
+        router-link to="/about" About
       li
-        a href="#"  Contact
+        router-link to="/contact" Contact
       li
         a href="http://news.railstutorial.org/"  News
 </template>

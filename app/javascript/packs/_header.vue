@@ -5,11 +5,11 @@ header.navbar.nabvar-fixed-top.navbar-inverse
     nav
       ul.nav.navbar-nav.navbar-right
         li
-          a href="#"  Home
+          router-link to="/" Home
         li
-          a href="#"  Help
+          router-link to="/help" Help
         li
-          a href="#"  Log in
+          router-link to="/login" Log in
 </template>
 
 <script>
